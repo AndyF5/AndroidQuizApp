@@ -26,8 +26,10 @@ public class MainActivity extends AppCompatActivity{
             Toast.makeText(this, R.string.message_No_Name, Toast.LENGTH_LONG).show();
         }
         else {
-            Toast.makeText(this, name + " Clicked Play -> open quiz", Toast.LENGTH_LONG).show();
-            startActivity(new Intent(this, QuizActivity.class));
+
+            Intent intent = new Intent(this, QuizActivity.class);
+            intent.putExtra("EXTRA_SESSION_NAME", name);
+            startActivity(intent);
         }
     }
 }
