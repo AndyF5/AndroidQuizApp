@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">TP1Quiz</string>
+    <string name="app_welcome">TP1 Quiz</string>
+    <string name="data_name">Nom</string>
+    <string name="btn_play">Jouer</string>
+    <string name="message_No_Name">Vous devez entrez votre nom!</string>
+    <string name="name_placeholder">Nom</string>
+
+</resources>
