@@ -1,37 +1,34 @@
 package com.example.tp1quiz.models;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
+import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
+
 public class Question {
     private String questionText;
-    private String correctAnswer;
-    private String wrongAnswer1;
-    private String wrongAnswer2;
-    private String wrongAnswer3;
+    private List<String> answers;
 
     public Question(String questionText, String correctAnswer, String wrongAnswer1, String wrongAnswer2, String wrongAnswer3) {
         this.questionText = questionText;
-        this.correctAnswer = correctAnswer;
-        this.wrongAnswer1 = wrongAnswer1;
-        this.wrongAnswer2 = wrongAnswer2;
-        this.wrongAnswer3 = wrongAnswer3;
-    }
+        this.answers = new ArrayList<>();
+        answers.add(correctAnswer);
+        answers.add(wrongAnswer1);
+        answers.add(wrongAnswer2);
+        answers.add(wrongAnswer3);
+     }
 
     public String getQuestionText() {
         return questionText;
     }
 
-    public String getCorrectAnswer() {
-        return correctAnswer;
-    }
+    public List<String> getShuffledAnswers(){
+        List<String> shuffledAnswers = new ArrayList<>(answers);
 
-    public String getWrongAnswer1() {
-        return wrongAnswer1;
-    }
+        Collections.shuffle(shuffledAnswers);
 
-    public String getWrongAnswer2() {
-        return wrongAnswer2;
-    }
-
-    public String getWrongAnswer3() {
-        return wrongAnswer3;
+        return shuffledAnswers;
     }
 }

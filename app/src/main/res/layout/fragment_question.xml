@@ -43,15 +43,54 @@
         </LinearLayout>
 
         <TextView
+            android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+
             android:text="@{quizVM.currentQuestion.questionText}"
             android:textSize="40sp"
-
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView2">
+
+            <Button
+                android:id="@+id/answer1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{quizVM.currentQuestion.shuffledAnswers.get(0)}"
+                android:onClick="onClickAnswer"/>
+
+            <Button
+                android:id="@+id/answer2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{quizVM.currentQuestion.shuffledAnswers.get(1)}"
+                android:onClick="onClickAnswer"/>
+
+            <Button
+                android:id="@+id/answer3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{quizVM.currentQuestion.shuffledAnswers.get(2)}"
+                android:onClick="onClickAnswer"/>
+
+            <Button
+                android:id="@+id/answer4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{quizVM.currentQuestion.shuffledAnswers.get(3)}"
+                android:onClick="onClickAnswer"/>
+        </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

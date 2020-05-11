@@ -9,6 +9,7 @@ import androidx.navigation.fragment.NavHostFragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.tp1quiz.databinding.ActivityQuizBinding;
@@ -37,6 +38,10 @@ public class QuizActivity extends AppCompatActivity {
         Toast.makeText(this, name + " Clicked Play -> open quiz", Toast.LENGTH_LONG).show();
     }
 
+    public QuizViewModel getViewModel() {
+        return quizVM;
+    }
+
     public void onClickPlay(View view) {
         NavDirections action =
                 RulesFragmentDirections
@@ -45,7 +50,9 @@ public class QuizActivity extends AppCompatActivity {
         Navigation.findNavController(view).navigate(action);
     }
 
-    public QuizViewModel getViewModel() {
-        return quizVM;
+    public void onClickAnswer(View view){
+        Button clicked = findViewById(view.getId());
+
+
     }
 }
