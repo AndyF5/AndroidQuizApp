@@ -17,7 +17,7 @@
         <LinearLayout
             android:id="@+id/linearLayout"
             android:layout_width="match_parent"
-            android:layout_height="30dp"
+            android:layout_height="wrap_content"
             android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -26,20 +26,22 @@
             <TextView
                 android:id="@+id/quizzerName"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:padding="5dp"
                 android:text="@{quizVM.name}"
-                android:textAlignment="center" />
+                android:textAlignment="center"
+                android:textSize="30sp"/>
 
             <TextView
                 android:id="@+id/quizzerScore"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:padding="5dp"
                 android:text="@{Integer.toString(quizVM.score)}"
-                android:textAlignment="center" />
+                android:textAlignment="center"
+                android:textSize="30sp"/>
         </LinearLayout>
 
         <TextView
@@ -57,6 +59,8 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
             android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -67,29 +71,29 @@
                 android:id="@+id/answer1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@{quizVM.currentQuestion.shuffledAnswers.get(0)}"
-                android:onClick="onClickAnswer"/>
+                android:onClick="onClickAnswer"
+                android:text="@{quizVM.currentQuestion.shuffledAnswers.get(0)}" />
 
             <Button
                 android:id="@+id/answer2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@{quizVM.currentQuestion.shuffledAnswers.get(1)}"
-                android:onClick="onClickAnswer"/>
+                android:onClick="onClickAnswer"
+                android:text="@{quizVM.currentQuestion.shuffledAnswers.get(1)}" />
 
             <Button
                 android:id="@+id/answer3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@{quizVM.currentQuestion.shuffledAnswers.get(2)}"
-                android:onClick="onClickAnswer"/>
+                android:onClick="onClickAnswer"
+                android:text="@{quizVM.currentQuestion.shuffledAnswers.get(2)}" />
 
             <Button
                 android:id="@+id/answer4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@{quizVM.currentQuestion.shuffledAnswers.get(3)}"
-                android:onClick="onClickAnswer"/>
+                android:onClick="onClickAnswer"
+                android:text="@{quizVM.currentQuestion.shuffledAnswers.get(3)}" />
         </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

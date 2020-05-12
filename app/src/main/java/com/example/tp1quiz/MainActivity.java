@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity{
         setContentView(R.layout.activity_main);
     }
 
+    //  Avancer à le quiz.
     public void onClickBtnPlay(View v){
         EditText nameET = (EditText) findViewById(R.id.dataName);
         String name = nameET.getText().toString();
@@ -26,7 +27,7 @@ public class MainActivity extends AppCompatActivity{
             Toast.makeText(this, R.string.message_No_Name, Toast.LENGTH_LONG).show();
         }
         else {
-
+            // Envoyer le nom entré avec intent.
             Intent intent = new Intent(this, QuizActivity.class);
             intent.putExtra("EXTRA_SESSION_NAME", name);
             startActivity(intent);

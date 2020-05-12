@@ -1,5 +1,7 @@
 package com.example.tp1quiz.models;
 
+import androidx.databinding.BaseObservable;
+
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -7,7 +9,7 @@ import java.util.List;
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
-public class Question {
+public class Question extends BaseObservable {
     private String questionText;
     private List<String> answers;
 
@@ -22,6 +24,10 @@ public class Question {
 
     public String getQuestionText() {
         return questionText;
+    }
+
+    public String getCorrectAnswer() {
+        return answers.get(0);
     }
 
     public List<String> getShuffledAnswers(){

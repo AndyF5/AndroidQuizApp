@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class QuizGenerator {
-    public List<Question> GetQuestions(int numQuestions)
+    public List<Question> getQuestions(int numQuestions)
     {
         List<Question> questions = new ArrayList<>();
 
