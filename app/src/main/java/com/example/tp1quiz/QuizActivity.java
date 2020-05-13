@@ -31,17 +31,19 @@ public class QuizActivity extends AppCompatActivity {
 
         String name = getIntent().getStringExtra("EXTRA_SESSION_NAME");
 
-        quizVM = new QuizViewModel(name, 3);
+        quizVM = new QuizViewModel(name, 3, this);
 
         binding.setQuizVM(quizVM);
     }
 
+    //  Pour chercher le VM à partir des Fragments.
     public QuizViewModel getViewModel() {
         return quizVM;
     }
 
     //  Bouton de navigation rules -> questions.
     public void onClickPlay(View view) {
+        //  Naviguer.
         NavDirections action =
                 RulesFragmentDirections
                         .actionRulesFragmentToQuestionFragment();
@@ -65,10 +67,33 @@ public class QuizActivity extends AppCompatActivity {
 
         //  Est-ce que c'est le fin du quiz?
         if(quizVM.getCurrentQuestionNumber() + 1 < quizVM.getNbQuestions()){
+            //  Chercher la prochaine question.
             quizVM.incrementQuestion();
         }
         else {
-            Toast.makeText(this, "Finished!", Toast.LENGTH_SHORT).show();
+            //  Naviguer à l'onglet de Quiz fini.
+            NavDirections action =
+                    QuestionFragmentDirections
+                        .actionQuestionFragmentToFinishFragment();
+
+            Navigation.findNavController(view).navigate(action);
         }
+    }
+
+    public void onClickReplay(View view){
+        quizVM = new QuizViewModel(quizVM.getName(), 3);
+
+        NavDirections action =
+                FinishFragmentDirections
+                    .actionFinishFragmentToRulesFragment();
+
+        Navigation.findNavController(view).navigate(action);
+    }
+
+    //  Override le back press pour rétourner à la page d'accueil plutot que les questions ou page des regles.
+    @Override
+    public void onBackPressed(){
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 }

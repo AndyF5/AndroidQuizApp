@@ -9,7 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.tp1quiz.databinding.FragmentQuestionBinding;
+import com.example.tp1quiz.databinding.FragmentFinishBinding;
 import com.example.tp1quiz.viewmodels.QuizViewModel;
 
 import java.util.Objects;
@@ -17,21 +17,14 @@ import java.util.Objects;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link QuestionFragment#newInstance} factory method to
- * create an instance of this fragment.
  */
-public class QuestionFragment extends Fragment {
+public class FinishFragment extends Fragment {
 
-    public QuestionFragment() {
+    public FinishFragment() {
         // Required empty public constructor
     }
 
-    public static QuestionFragment newInstance(String param1, String param2) {
-        QuestionFragment fragment = new QuestionFragment();
-        Bundle args = new Bundle();
-        fragment.setArguments(args);
-        return fragment;
-    }
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -41,8 +34,7 @@ public class QuestionFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
-        FragmentQuestionBinding binding = DataBindingUtil.inflate(inflater, R.layout.fragment_question, container, false);
+        FragmentFinishBinding binding = DataBindingUtil.inflate(inflater, R.layout.fragment_finish, container, false);
 
         View view = binding.getRoot();
 

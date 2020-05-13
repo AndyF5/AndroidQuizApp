@@ -10,5 +10,8 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="rules_title">Regles</string>
     <string name="rules_text">Ceci sont des regles du quiz.</string>
+    <string name="finished_message">Quiz fini!</string>
+    <string name="score_display">Votre score:</string>
+    <string name="btn_replay">Jouer encore!</string>
 
 </resources>

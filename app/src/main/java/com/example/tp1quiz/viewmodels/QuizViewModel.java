@@ -1,5 +1,7 @@
 package com.example.tp1quiz.viewmodels;
 
+import android.content.Context;
+
 import androidx.databinding.BaseObservable;
 import androidx.databinding.Bindable;
 import androidx.databinding.Observable;
@@ -25,6 +27,16 @@ public class QuizViewModel extends BaseObservable {
         QuizGenerator qg = new QuizGenerator();
         this.nbQuestions = nbQuestions;
         this.questions = qg.getQuestions(nbQuestions);
+        this.currentQuestionNumber = 0;
+        currentQuestion.set(questions.get(currentQuestionNumber));
+    }
+
+    public QuizViewModel(String name, int nbQuestions, Context context) {
+        this.name = name;
+        score.set(0);
+        QuizGenerator qg = new QuizGenerator();
+        this.nbQuestions = nbQuestions;
+        this.questions = qg.getQuestions(nbQuestions, context);
         this.currentQuestionNumber = 0;
         currentQuestion.set(questions.get(currentQuestionNumber));
     }

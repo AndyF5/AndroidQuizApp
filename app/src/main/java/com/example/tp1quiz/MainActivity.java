@@ -10,19 +10,26 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.facebook.stetho.Stetho;
+
 public class MainActivity extends AppCompatActivity{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Stetho.initializeWithDefaults(this);
     }
 
     //  Avancer à le quiz.
     public void onClickBtnPlay(View v){
+
+        //  Get nom.
         EditText nameET = (EditText) findViewById(R.id.dataName);
         String name = nameET.getText().toString();
 
+        //  Vérifier le nom.
         if (name.length() <= 2){
             Toast.makeText(this, R.string.message_No_Name, Toast.LENGTH_LONG).show();
         }
