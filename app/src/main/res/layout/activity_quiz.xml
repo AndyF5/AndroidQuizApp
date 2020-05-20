@@ -19,8 +19,9 @@
     android:layout_height="match_parent"
     android:src="@drawable/ic_quizbackground"
     android:tint="@color/colorPrimaryDark"
-    android:scaleType="centerCrop"/>
-        <fragment
+    android:scaleType="centerCrop"
+    android:contentDescription="@string/background_image" />
+        <androidx.fragment.app.FragmentContainerView
             android:id="@+id/navFragment"
             android:name="androidx.navigation.fragment.NavHostFragment"
             app:navGraph="@navigation/nav_graph"

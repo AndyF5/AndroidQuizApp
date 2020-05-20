@@ -13,5 +13,6 @@
     <string name="finished_message">Quiz fini!</string>
     <string name="score_display">Votre score:</string>
     <string name="btn_replay">Jouer encore!</string>
+    <string name="background_image">Background Image</string>
 
 </resources>
