@@ -48,8 +48,8 @@ public class QuestionDAO {
 
     }
 
-    public List<Question> readQuestions(){
-        return dbHelper.getQuestions();
+    public List<Question> readQuestions(int nbQuestions){
+        return dbHelper.getQuestions(nbQuestions);
     }
 
 }

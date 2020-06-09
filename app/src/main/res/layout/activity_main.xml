@@ -4,17 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="15dp"
     tools:context=".MainActivity"
-    android:background="@drawable/ic_quizbackground"
-    android:backgroundTint="@color/colorPrimaryDark">
+    android:background="@color/colorAccent">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/ic_quizbackground"
+        android:tint="@color/colorPrimary"
+        android:scaleType="centerCrop"
+        android:contentDescription="@string/background_image" />
 
     <TextView
         android:id="@+id/appWelcome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
         android:text="@string/app_welcome"
-        android:textSize="24sp"
+        android:textSize="36sp"
         android:textStyle="bold"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -27,6 +34,8 @@
         android:ems="10"
         android:hint="@string/data_name"
         android:inputType="textPersonName"
+        android:textColor="@color/colorPrimaryDark"
+        android:backgroundTint="@color/colorPrimaryDark"
         app:layout_constraintBottom_toTopOf="@+id/btnPlay"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -35,8 +44,10 @@
 
     <Button
         android:id="@+id/btnPlay"
+        style="@style/ButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
         android:onClick="onClickBtnPlay"
         android:text="@string/btn_play"
         app:layout_constraintBottom_toBottomOf="parent"

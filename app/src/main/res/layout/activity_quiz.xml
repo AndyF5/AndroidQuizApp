@@ -12,16 +12,17 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".QuizActivity">
+        tools:context=".QuizActivity"
+        android:background="@color/colorAccent">
 
 <ImageView
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:src="@drawable/ic_quizbackground"
-    android:tint="@color/colorPrimaryDark"
+    android:tint="@color/colorPrimary"
     android:scaleType="centerCrop"
     android:contentDescription="@string/background_image" />
-        <androidx.fragment.app.FragmentContainerView
+        <fragment
             android:id="@+id/navFragment"
             android:name="androidx.navigation.fragment.NavHostFragment"
             app:navGraph="@navigation/nav_graph"

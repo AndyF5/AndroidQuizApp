@@ -12,7 +12,9 @@
         tools:layout="@layout/fragment_rules" >
         <action
             android:id="@+id/action_rulesFragment_to_questionFragment"
-            app:destination="@id/questionFragment" />
+            app:destination="@id/questionFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right" />
     </fragment>
     <fragment
         android:id="@+id/questionFragment"
@@ -22,6 +24,8 @@
         <action
             android:id="@+id/action_questionFragment_to_finishFragment"
             app:destination="@id/finishFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
             app:popUpTo="@id/rulesFragment"
             app:popUpToInclusive="true" />
     </fragment>

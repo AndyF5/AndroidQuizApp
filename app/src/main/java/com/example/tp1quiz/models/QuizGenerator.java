@@ -40,7 +40,7 @@ public class QuizGenerator {
             dao.insert(new QuestionDTO("Question" + i, "Correct", "Wrong", "Wrong", "Wrong"));
         }*/
 
-        List<Question> questions = dao.readQuestions();
+        List<Question> questions = dao.readQuestions(numQuestions);
 
         dao.close();
 

@@ -92,9 +92,18 @@ public class QuestionDbHelper extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
     }
 
-    public List<Question> getQuestions() {
+    public List<Question> getQuestions(int nbQuestions) {
         SQLiteDatabase db = SQLiteDatabase.openDatabase(dbPath, null, SQLiteDatabase.OPEN_READONLY);
-        String query = "SELECT " + COLUMN_NAME_QUESTIONTEXT + ", " + COLUMN_NAME_CORRECTANSWER + ", " + COLUMN_NAME_WRONGANSWER1 + ", " + COLUMN_NAME_WRONGANSWER2 + ", " + COLUMN_NAME_WRONGANSWER3 + " FROM " + TABLE_NAME;
+        String query =
+                "SELECT " +
+                COLUMN_NAME_QUESTIONTEXT + ", " +
+                COLUMN_NAME_CORRECTANSWER + ", " +
+                COLUMN_NAME_WRONGANSWER1 + ", " +
+                COLUMN_NAME_WRONGANSWER2 + ", " +
+                COLUMN_NAME_WRONGANSWER3 +
+                " FROM " + TABLE_NAME +
+                " ORDER BY RANDOM() LIMIT " +
+                Integer.toString(nbQuestions) ;
         Cursor cursor = db.rawQuery(query, null);
         List<Question> questions = new ArrayList<>();
         while(cursor.moveToNext()) {
