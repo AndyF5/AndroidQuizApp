@@ -116,6 +116,7 @@ public class QuestionDbHelper extends SQLiteOpenHelper {
             );
             questions.add(question);
         }
+        cursor.close();
         db.close();
         return questions;
     }

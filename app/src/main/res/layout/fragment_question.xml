@@ -72,6 +72,8 @@
                 android:id="@+id/answer1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                style="@style/ButtonStyle"
                 android:onClick="onClickAnswer"
                 android:text="@{quizVM.currentQuestion.shuffledAnswers.get(0)}" />
 
@@ -79,6 +81,8 @@
                 android:id="@+id/answer2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                style="@style/ButtonStyle"
                 android:onClick="onClickAnswer"
                 android:text="@{quizVM.currentQuestion.shuffledAnswers.get(1)}" />
 
@@ -86,6 +90,8 @@
                 android:id="@+id/answer3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                style="@style/ButtonStyle"
                 android:onClick="onClickAnswer"
                 android:text="@{quizVM.currentQuestion.shuffledAnswers.get(2)}" />
 
@@ -93,6 +99,8 @@
                 android:id="@+id/answer4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                style="@style/ButtonStyle"
                 android:onClick="onClickAnswer"
                 android:text="@{quizVM.currentQuestion.shuffledAnswers.get(3)}" />
         </LinearLayout>
